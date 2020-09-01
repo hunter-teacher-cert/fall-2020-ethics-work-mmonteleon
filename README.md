@@ -1,6 +1,6 @@
-## last name:
-## first name:
-## github username:
+## last name: MonteLeon
+## first name: Margaret
+## github username: mmonteleon
 ---------------------
 ### general workflow:
 0. Fill out the top of this form, commit and push it back to GitHub.
@@ -8,4 +8,3 @@
    * `$ mkdir <2-digit-week-number>-<topic>` (to be specified for each assignment)
    * Add files, commit and push them up to Github.
    * Commit frequently as you work.
-
