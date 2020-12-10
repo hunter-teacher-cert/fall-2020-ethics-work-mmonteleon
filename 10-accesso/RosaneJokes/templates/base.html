@@ -1,0 +1,66 @@
+<html>
+    <head>
+      
+      <title>{% block title %}  {% endblock %}</title>
+      <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+      <style>
+        body{
+            background-color: {{background}};
+            font-family: 'Shadows Into Light', cursive;
+            padding: 50px;
+            font-size:{{fontsize}};
+        }
+        button{
+          font-size:{{fontsize}};
+          padding: 15px 15px;
+          border-radius: 8px;
+        }
+      </style>
+    </head>
+    <body>
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Retrieve
+  document.body.style.backgroundColor=localStorage.getItem("color");
+  document.body.style.fontSize=localStorage.getItem("size");
+} else {
+  // Store
+  localStorage.setItem("color", "DeepSkyBlue");
+  localStorage.setItem("size", "medium");
+}
+function changeColor(c)
+{
+  console.log(c);
+  localStorage.setItem("color", c);
+  document.body.style.backgroundColor=localStorage.getItem("color");
+}
+
+
+function changeSize(s){
+  localStorage.setItem("size", s);
+  document.body.style.fontSize=localStorage.getItem("size");
+}
+
+</script>      
+        {% block content %}{% endblock %}
+        <br>
+        <br>
+        <h2>Adjust the font size:</h2>
+        <button href="#"  onclick="changeSize('8px')">TEENY</button> <span></span>
+        <button href="#"  onclick="changeSize('12px')">SMALL</button> <span></span>
+        <button href="#"  onclick="changeSize('20px')">MEDIUM</button><span></span>
+        <button href="#"  onclick="changeSize('30px')">BIG</button><span></span>
+        <button href='#'  onclick="changeSize('40px')">HUGE</button><span></span>
+        <button href='#'  onclick="changeSize('50px')">MONUMENTAL</button><span></span>
+
+        <h2>Change the background:</h2>
+        <button href="#" onclick="changeColor('White')">WHITE</button><span></span>
+        <button href="#" onclick="changeColor('Pink')">PINK</button><span></span>
+        <button href="#" onclick="changeColor('Plum')">PURPLE</button><span></span>
+        <button href="#" onclick="changeColor('DeepSkyBlue')">BLUE</button><span></span>
+        <button href="#" onclick="changeColor('Gold')">YELLOW</button><span></span>
+        <button href="#" onclick="changeColor('ORANGE')">ORANGE</button><span></span>
+        <button href="#" onclick="changeColor('LightGreen')">GREEN</button><span></span>
+      </body>
+</html>
